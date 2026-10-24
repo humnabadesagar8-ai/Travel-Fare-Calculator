@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-950 text-ink-100 font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-accent-500/30 text-white;
+  }
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ink-700 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ink-600;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  .glass-card {
+    @apply glass rounded-2xl shadow-xl shadow-black/20;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-accent-600 px-4 py-2.5 text-sm font-semibold text-white transition-all hover:bg-accent-500 hover:shadow-lg hover:shadow-accent-500/25 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-medium text-ink-200 transition-all hover:bg-white/10 hover:text-white active:scale-[0.98];
+  }
+  .input-field {
+    @apply w-full rounded-xl border border-white/10 bg-ink-900/60 px-4 py-2.5 text-sm text-white placeholder-ink-500 outline-none transition-all focus:border-accent-500/50 focus:ring-2 focus:ring-accent-500/20;
+  }
+  .nav-item {
+    @apply flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-ink-400 transition-all hover:bg-white/5 hover:text-white;
+  }
+  .nav-item-active {
+    @apply bg-accent-500/15 text-white shadow-[inset_0_0_0_1px] shadow-accent-500/20;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent-400 via-violet-400 to-accent-500 bg-clip-text text-transparent;
+  }
+  .bg-grid {
+    background-size: 48px 48px;
+  }
+}

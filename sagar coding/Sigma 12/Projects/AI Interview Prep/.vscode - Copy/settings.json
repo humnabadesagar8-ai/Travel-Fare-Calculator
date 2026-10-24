@@ -1,0 +1,17 @@
+// {
+//     "git.ignoreLimitWarning": true
+// }
+{
+    "deno.enable": true,
+    "deno.enablePaths": [
+        "supabase/functions"
+    ],
+    "deno.lint": true
+}
+// {
+//     "deno.enable": true,
+//     "deno.enablePaths": [
+//         "supabase/functions"
+//     ],
+//     "deno.lint": true
+// }
